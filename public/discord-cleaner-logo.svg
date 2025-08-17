@@ -1,0 +1,106 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#7c3aed;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#6d28d9;stop-opacity:1" />
+        </linearGradient>
+
+        <linearGradient id="successGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#059669;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#047857;stop-opacity:1" />
+        </linearGradient>
+
+        <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1e293b;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+        </linearGradient>
+
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="coloredBlur" />
+            <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+
+        <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3" />
+        </filter>
+    </defs>
+
+    <circle cx="60" cy="60" r="56" fill="url(#backgroundGradient)" stroke="url(#primaryGradient)"
+        stroke-width="2" filter="url(#shadow)" />
+
+    <circle cx="60" cy="60" r="48" fill="none" stroke="url(#primaryGradient)" stroke-width="1"
+        opacity="0.3" />
+
+    <g transform="translate(35, 25)">
+        <path
+            d="M25 8C25 8 18 4 10 4S-5 8 -5 8V28C-5 38 10 50 25 50S55 38 55 28V8C55 8 48 4 40 4S25 8 25 8Z"
+            fill="none"
+            stroke="url(#primaryGradient)"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            filter="url(#glow)" />
+
+        <g transform="translate(15, 12)">
+            <rect x="8" y="2" width="4" height="24" rx="2" fill="url(#primaryGradient)" />
+
+            <rect x="9" y="22" width="2" height="12" rx="1" fill="url(#primaryGradient)"
+                opacity="0.8" />
+
+            <g fill="url(#primaryGradient)" opacity="0.9">
+                <rect x="6" y="0" width="1.5" height="8" rx="0.75" transform="rotate(-10 6 0)" />
+                <rect x="8" y="0" width="1.5" height="10" rx="0.75" />
+                <rect x="10" y="0" width="1.5" height="9" rx="0.75" />
+                <rect x="12" y="0" width="1.5" height="8" rx="0.75" transform="rotate(10 12 0)" />
+                <rect x="14" y="0" width="1.5" height="7" rx="0.75" transform="rotate(15 14 0)" />
+            </g>
+        </g>
+
+        <g fill="url(#successGradient)" opacity="0.8">
+            <circle cx="8" cy="15" r="2" />
+            <circle cx="42" cy="18" r="1.5" />
+            <circle cx="12" cy="35" r="1" />
+            <circle cx="38" cy="32" r="1.5" />
+            <circle cx="45" cy="12" r="1" />
+
+            <circle cx="15" cy="10" r="0.5" />
+            <circle cx="35" cy="8" r="0.5" />
+            <circle cx="18" cy="38" r="0.5" />
+            <circle cx="32" cy="40" r="0.5" />
+            <circle cx="6" cy="28" r="0.5" />
+            <circle cx="44" cy="25" r="0.5" />
+        </g>
+    </g>
+
+    <g opacity="0.4">
+        <circle cx="60" cy="60" r="64" fill="none" stroke="url(#primaryGradient)" stroke-width="0.5"
+            opacity="0.3" />
+        <circle cx="60" cy="60" r="72" fill="none" stroke="url(#primaryGradient)" stroke-width="0.3"
+            opacity="0.2" />
+    </g>
+
+    <circle cx="60" cy="60" r="2" fill="url(#successGradient)" filter="url(#glow)" opacity="0.8" />
+
+    <g opacity="0.6">
+        <animateTransform attributeName="transform" type="rotate" values="0 60 60;360 60 60"
+            dur="20s" repeatCount="indefinite" />
+        <circle cx="20" cy="60" r="1" fill="url(#primaryGradient)" opacity="0.5">
+            <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="100" cy="60" r="1.5" fill="url(#successGradient)" opacity="0.4">
+            <animate attributeName="opacity" values="0.4;0.8;0.4" dur="4s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="60" cy="20" r="0.8" fill="url(#primaryGradient)" opacity="0.6">
+            <animate attributeName="opacity" values="0.6;1;0.6" dur="2.5s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="60" cy="100" r="1.2" fill="url(#successGradient)" opacity="0.3">
+            <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3.5s"
+                repeatCount="indefinite" />
+        </circle>
+    </g>
+</svg>
