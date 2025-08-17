@@ -2,7 +2,11 @@
   "name": "discord-cleaner",
   "private": true,
   "description": "Desktop приложение для безопасной очистки сообщений Discord с множественными профилями и продвинутой фильтрацией",
-  "author": "resoufish",
+  "author": {
+    "name": "resoufish",
+    "email": "resoufish@gmail.com",
+    "url": "https://github.com/resoufish"
+  },
   "main": "./electron/main.ts",
   "version": "0.0.0",
   "type": "module",
