@@ -25,8 +25,7 @@ jobs:
       - name: Install pnpm globally
         run: |
           npm install -g pnpm
-          echo "PNPM_HOME=$(pnpm root -g)" >> $GITHUB_ENV
-          echo "$PNPM_HOME:$PATH" >> $GITHUB_ENV
+          echo "PATH=$(npm bin -g):$PATH" >> $GITHUB_ENV
 
       - name: Install dependencies
         run: pnpm install
