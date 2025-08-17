@@ -12,11 +12,11 @@ let mainWindow: BrowserWindow | null = null;
 
 function getIconPath() {
   if (process.platform === "win32") {
-    return path.join(__dirname, "../build/icon.ico");
+    return path.join(__dirname, "../build/icons/icon.ico");
   } else if (process.platform === "darwin") {
-    return path.join(__dirname, "../build/icon.icns");
+    return path.join(__dirname, "../build/icons/icon.icns");
   } else {
-    return path.join(__dirname, "../build/icon.png");
+    return path.join(__dirname, "../build/icons/icon.png");
   }
 }
 
