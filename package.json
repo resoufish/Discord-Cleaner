@@ -74,7 +74,7 @@
     ],
     "extraResources": [
       {
-        "from": "build/icons",
+        "from": "build",
         "to": "icons"
       }
     ],
@@ -100,7 +100,7 @@
         "rpm"
       ],
       "category": "Utility",
-      "icon": "build/icons"
+      "icon": "build"
     }
   }
 }
