@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ru" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/discord-cleaner-favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discord Cleaner</title>
+    <meta name="description" content="Безопасная очистка ваших сообщений Discord с множественными профилями и продвинутой фильтрацией" />
+    <meta name="author" content="resoufish" />
+    <style>
+      .preloader {
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.6s ease-out;
+      }
+
+      .preloader.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      .loader {
+        width: 70px;
+        height: 70px;
+        border: 5px solid rgba(139, 92, 246, 0.25);
+        border-top: 5px solid #8b5cf6;
+        border-radius: 50%;
+        animation: spin 1.2s linear infinite;
+        box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      .loader-text {
+        margin-top: 20px;
+        color: #c4b5fd;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 17px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        text-align: center;
+        animation: glow 2.5s ease-in-out infinite;
+      }
+
+      @keyframes glow {
+        0%, 100% { text-shadow: 0 0 6px #8b5cf6, 0 0 12px #8b5cf6; opacity: 1; }
+        50% { text-shadow: 0 0 2px #8b5cf6; opacity: 0.7; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="preloader" class="preloader">
+      <div class="loader"></div>
+      <div class="loader-text">Загрузка Discord Cleaner...</div>
+    </div>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <script>
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const preloader = document.getElementById('preloader');
+          if (preloader) {
+            preloader.classList.add('hide');
+            setTimeout(() => preloader.remove(), 600);
+          }
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>
