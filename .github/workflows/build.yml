@@ -22,10 +22,11 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Install pnpm globally
-        run: |
-          npm install -g pnpm
-          echo "PATH=$(npm bin -g):$PATH" >> $GITHUB_ENV
+      - name: Install pnpm
+        run: npm install -g pnpm@latest
+      
+      - name: Verify pnpm
+        run: pnpm --version
 
       - name: Install dependencies
         run: pnpm install
