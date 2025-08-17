@@ -24,27 +24,27 @@ jobs:
 
       - name: Install pnpm
         run: npm install -g pnpm@latest
-      
+
       - name: Verify pnpm
         run: pnpm --version
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build Vite app
         run: pnpm vite:build
 
-      - name: Build Electron App
-        run: |
-          if [[ "${{ runner.os }}" == "Windows" ]]; then
-            pnpm electron:build:windows
-          elif [[ "${{ runner.os }}" == "Linux" ]]; then
-            pnpm electron:build:linux
-          elif [[ "${{ runner.os }}" == "macOS" ]]; then
-            pnpm electron:build:mac
-          else
-            echo "Skipping build: unsupported OS"
-          fi
+      - name: Build Electron on Windows
+        if: runner.os == 'Windows'
+        run: pnpm electron:build:windows
+
+      - name: Build Electron on Linux
+        if: runner.os == 'Linux'
+        run: pnpm electron:build:linux
+
+      - name: Build Electron on macOS
+        if: runner.os == 'macOS'
+        run: pnpm electron:build:mac
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
