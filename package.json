@@ -91,9 +91,11 @@
     "win": {
       "target": [
         "nsis",
-        "zip"
+        "zip",
+        "portable"
       ],
-      "icon": "build/icons/icon.ico"
+      "icon": "build/icons/icon.ico",
+      "publish": null
     },
     "mac": {
       "target": [

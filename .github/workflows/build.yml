@@ -9,6 +9,8 @@ jobs:
   build:
     name: Build on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
+    env:
+      GH: ${{ secrets.GH_TOKEN }}
     strategy:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
@@ -78,4 +80,4 @@ jobs:
           tag: v${{ env.VERSION }}
           name: Discord Cleaner Release v${{ env.VERSION }}
           artifacts: "dist/*"
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
