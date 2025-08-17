@@ -19,8 +19,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'pnpm'
+          node-version: "20"
+          cache: "pnpm"
 
       - name: Install pnpm
         run: npm install -g pnpm
@@ -39,6 +39,8 @@ jobs:
             pnpm electron:build:linux
           elif [[ "${{ runner.os }}" == "macOS" ]]; then
             pnpm electron:build:mac
+          else
+            echo "Skipping build: unsupported OS"
           fi
 
       - name: Upload artifacts
